@@ -239,9 +239,19 @@ p { margin: 0; }
 
 
 
-.clients { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.location { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: center; gap: clamp(32px, 6vw, 72px); margin-top: 28px; }
 
-.clients span { font-family: var(--display); font-weight: 700; font-size: 26px; text-transform: uppercase; letter-spacing: .03em; padding: 10px 20px; border: 1px solid var(--line); background: var(--surface); }
+.location-info { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+
+.location-info h2 { font-size: clamp(34px, 4vw, 52px); font-weight: 800; }
+
+.location-info address { max-width: 38ch; color: var(--muted); font-style: normal; font-size: 17px; }
+
+.location-map-frame { min-width: 0; padding: 12px; border: 1px solid var(--line); background: var(--surface); box-shadow: 0 16px 40px rgba(0, 0, 0, .12); }
+
+.location-map { display: block; width: 100%; height: clamp(300px, 36vw, 420px); border: 0; }
+
+@media (max-width: 760px) { .location { grid-template-columns: minmax(0, 1fr); gap: 28px; } .location-info { gap: 12px; } .location-map { height: 340px; } }
 
 
 
