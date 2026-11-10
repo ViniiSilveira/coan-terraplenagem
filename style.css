@@ -87,7 +87,9 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 a { color: inherit; }
 
-h1, h2, h3 { font-family: var(--display); text-transform: uppercase; line-height: 1.02; margin: 0; text-wrap: balance; letter-spacing: .01em; }
+h2, h3 { font-family: var(--display); text-transform: uppercase; line-height: 1.02; margin: 0; text-wrap: balance; letter-spacing: .01em; }
+
+h1 { font-family: var(--display); text-transform: uppercase; line-height: 1.02; margin: 0; text-wrap: balance; letter-spacing: .01em; }
 
 p { margin: 0; }
 
@@ -127,21 +129,24 @@ p { margin: 0; }
 
 /* hero */
 
-.hero { background: var(--band); color: var(--on-band); }
+.hero {
+   background:
+      linear-gradient(rgba(4, 43, 19, .76), rgba(4, 43, 19, .82)),
+      url("https://images.unsplash.com/photo-1580901368919-7738efb0f87e?auto=format&fit=crop&w=1400&q=85") center 45% / cover;
+   color: var(--on-band);
+}
 
 .hero .in { padding-block: 56px 28px; }
 
 .hero .label { color: var(--on-band-soft); }
 
-.hero-main { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: center; gap: clamp(28px, 5vw, 64px); }
+.hero-main { display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; }
 
-.hero h1 { font-size: clamp(46px, 9vw, 108px); font-weight: 800; max-width: 13ch; }
+.hero h1 { font-size: clamp(46px, 9vw, 108px); font-weight: 800; max-width: 50ch; margin-bottom: 8px; margin-top: 80px; }
 
 .hero .lead { margin-top: 20px; max-width: 54ch; font-size: 19px; color: var(--on-band-soft); }
 
-.hero-image { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 1px solid rgba(255,255,255,.3); }
-
-.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; margin-bottom: 100px; }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; font: 600 16px var(--body); letter-spacing: .02em; text-decoration: none; border: 2px solid transparent; border-radius: 2px; cursor: pointer; }
 
@@ -180,8 +185,7 @@ p { margin: 0; }
 .step p { font-size: 16px; color: var(--on-band-soft); margin-top: 4px; }
 
 @media (max-width: 760px) {
-   .hero-main { grid-template-columns: minmax(0, 1fr); gap: 28px; }
-   .hero-image { aspect-ratio: 16 / 9; }
+   .hero-main { gap: 28px; }
 }
 
 
