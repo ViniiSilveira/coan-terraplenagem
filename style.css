@@ -93,6 +93,10 @@ p { margin: 0; }
 
 :focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
 
+@media (prefers-reduced-motion: no-preference) {
+   .motion-ready [data-motion="hidden"] { opacity: 0; }
+}
+
 
 
 .in { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
@@ -129,9 +133,13 @@ p { margin: 0; }
 
 .hero .label { color: var(--on-band-soft); }
 
-.hero h1 { font-size: clamp(46px, 9vw, 108px); font-weight: 800; margin-top: 14px; max-width: 13ch; }
+.hero-main { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: center; gap: clamp(28px, 5vw, 64px); }
+
+.hero h1 { font-size: clamp(46px, 9vw, 108px); font-weight: 800; max-width: 13ch; }
 
 .hero .lead { margin-top: 20px; max-width: 54ch; font-size: 19px; color: var(--on-band-soft); }
+
+.hero-image { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 1px solid rgba(255,255,255,.3); }
 
 .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 
@@ -171,6 +179,10 @@ p { margin: 0; }
 
 .step p { font-size: 16px; color: var(--on-band-soft); margin-top: 4px; }
 
+@media (max-width: 760px) {
+   .hero-main { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+   .hero-image { aspect-ratio: 16 / 9; }
+}
 
 
 /* slogan */
