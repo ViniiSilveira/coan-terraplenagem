@@ -123,7 +123,21 @@ p { margin: 0; }
 
 .nav .tel { font-family: var(--mono); color: var(--fg); font-size: 14px; }
 
-@media (max-width: 640px) { .nav a:not(.tel) { display: none; } .logo { height: 38px; } }
+@media (max-width: 640px) {
+   .top .in { gap: 6px; padding-block: 8px 6px; }
+   .logo { height: 36px; }
+   #servicos, #diferenciais, #contato { scroll-margin-top: 108px; }
+   .nav {
+      width: 100%;
+      gap: 6px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+   }
+   .nav::-webkit-scrollbar { display: none; }
+   .nav a { flex: 0 0 auto; min-height: 44px; display: inline-flex; align-items: center; padding: 0 10px; white-space: nowrap; }
+}
 
 
 
@@ -186,6 +200,19 @@ p { margin: 0; }
 
 @media (max-width: 760px) {
    .hero-main { gap: 28px; }
+}
+
+@media (max-width: 640px) {
+   .hero .in { padding-block: 36px 24px; }
+   .hero h1 { font-size: clamp(40px, 12vw, 58px); }
+   .hero .lead { margin-top: 14px; font-size: 17px; }
+   .cta { gap: 8px; margin-top: 22px; }
+   .cta .btn { flex: 1 1 140px; padding-inline: 14px; }
+   .steps { gap: 10px; margin-top: 28px; }
+   .step { display: grid; grid-template-columns: minmax(82px, .7fr) minmax(0, 1.3fr); align-items: center; }
+   .step .cap { padding: 12px; border-top: 0; border-left: 1px solid rgba(255,255,255,.22); }
+   .step h3 { font-size: 24px; }
+   .step p { font-size: 15px; line-height: 1.4; }
 }
 
 
@@ -269,6 +296,18 @@ p { margin: 0; }
 
 @media (max-width: 760px) { .location { grid-template-columns: minmax(0, 1fr); gap: 28px; } .location-info { gap: 12px; } .location-map { height: 340px; } }
 
+@media (max-width: 640px) {
+   .slogan .in { padding-block: 48px; }
+   .sec .in { padding-block: 16px 56px; }
+   .cards { gap: 14px; margin-top: 24px; }
+   .card .txt { padding: 18px; }
+   .row { padding: 16px 0; }
+   .row h3 { font-size: 28px; }
+   .location { gap: 20px; }
+   .location-map-frame { padding: 8px; }
+   .location-map { height: 280px; }
+}
+
 
 
 /* contact */
@@ -308,3 +347,11 @@ footer .in { padding-block: 22px; display: flex; flex-wrap: wrap; gap: 8px 24px;
 
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+@media (max-width: 640px) {
+   .contact .in { padding-block: 48px; }
+   .info { gap: 12px; margin-top: 24px; }
+   .box { padding: 18px; }
+   .mini { min-height: 44px; }
+   footer .in { padding-block: 18px; }
+}
